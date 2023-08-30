@@ -1,0 +1,647 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Quicksand&display=swap');
+
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+    height: 100%;
+    background-color: #E6E9EA;
+}
+
+body {
+    font-family: "Poppins";
+    
+}
+
+header {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 3rem;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    /* Align items to the sides */
+    align-items: center;
+    margin: 15px;
+    /* Remove default margin from the header */
+}
+
+header .start {
+    padding: .75rem 2rem;
+    outline: none;
+    border: none;
+    font-family: 'Poppins';
+    font-size: 1rem;
+    font-weight: 500;
+    color: #E6E9EA;
+    background-color: black;
+    border-radius: .95rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+header .start:hover {
+    color: #000000;
+    font-weight: 700;
+    background-color: rgb(255, 252, 252);
+    border: 1px solid #000000;
+}
+
+/* Media queries for smaller screens */
+@media (max-width: 768px) {
+    header {
+        font-size: 1rem;
+        /* Decrease header font size for smaller screens */
+    }
+
+    .start {
+        font-size: 0.8rem;
+        /* Decrease button font size for smaller screens */
+        padding: 0.5rem 1rem;
+        /* Adjust button padding for smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    header {
+        font-size: 0.8rem;
+        /* Further decrease header font size for even smaller screens */
+    }
+
+    .start {
+        font-size: 0.7rem;
+        /* Further decrease button font size for even smaller screens */
+        padding: 0.3rem 0.8rem;
+        /* Further adjust button padding for even smaller screens */
+    }
+}
+
+
+.hero-text {
+    text-align: center;
+    font-size: 2vw;
+    /* Adjust font size using viewport width unit */
+    line-height: 3rem;
+    flex-grow: 1;
+}
+
+.hero .action-button {
+    padding: .75rem 2rem;
+    outline: none;
+    border: none;
+    font-family: 'Poppins';
+    font-size: 1rem;
+    font-weight: 500;
+    color: #E6E9EA;
+    background: #000000;
+    border-radius: .95rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero .action-button:hover {
+    color: #000000;
+    font-weight: 500;
+    border: 1px solid #000000;
+    background: #ffffff;
+}
+
+.hero .title {
+    font-size: 5vw;
+    /* Adjust font size using viewport width unit */
+    font-weight: bolder;
+    margin: 5vw;
+    /* Adjust margin using viewport width unit */
+    padding-top: 1vw;
+    /* Adjust padding using viewport width unit */
+    line-height: 8vw;
+    /* Adjust line height using viewport width unit */
+    word-spacing: 0.5px;
+}
+.hero .title li {
+    color: #979599;
+    list-style: none;
+    line-height: 90px;
+    height: 90px;
+    overflow: hidden;
+    margin-left: 15px;
+    
+}
+.hero .title li span{
+    position: relative;
+}
+.hero .title li span::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    background: #E6E9EA;
+    border-left: 2px solid #514c4c;
+    animation: typing 3s steps(13) infinite;
+}
+@keyframes typing{
+    100%{
+        left: 100%;
+        margin: 0 -35px 0 35px;
+    }
+}
+.hero .tagline {
+    font-size: 1.5vw;
+    font-family: sans-serif;
+    font-weight: 10px;
+    /* Adjust font size using viewport width unit */
+    line-height: 2rem;
+    /* Adjust line height */
+    color: #777676;
+    margin: 1vw;
+    /* Adjust margin using viewport width unit */
+    text-align: center;
+
+}
+@media (max-width: 768px) {
+    /* Adjustments for smaller screens can be added here if needed */
+    .hero .tagline {
+        font-size: 5px;
+        padding: 10px;
+    }
+    .hero .title {
+        font-size: 0.2vw;
+    }
+
+}
+
+.hero .card-image {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 150px 0;
+    
+    
+}
+
+.hero .card-image img {
+    max-width: 30%;
+    transition: transform 0.5s, max-width 0.5s;
+}
+/* Define the animation using keyframes */
+@keyframes scrollAnimation {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(0.8);
+    }
+}
+
+/* Apply the animation to the card images */
+.hero .card-image img.scroll-animation {
+    animation: scrollAnimation 0.5s forwards;
+}
+.interface {
+  
+    font-weight: 900;
+    margin: 80px;
+    padding-top: 20px;
+    line-height: 80px;
+    word-spacing: 0.5px;
+    text-align: center;
+    font-size: 2rem;
+    line-height: 4rem;
+    flex-grow: 1;
+    color: #514c4c;
+    
+}
+.interface img {
+    max-width: 100%;
+    /* Adjust the width as desired */
+    height: auto;
+    margin-top: 110px;
+    /* Adjust the margin-top to move the image lower */
+    max-width: 100%;
+    transition: transform 0.5s ease;
+}
+.offering {
+    text-align: center;
+}
+
+.offering .title {
+    font-weight: 900;
+    margin: 80px;
+    padding-top: 20px;
+    line-height: 80px;
+    word-spacing: 0.5px;
+    text-align: center;
+    font-size: 4rem;
+    line-height: 3rem;
+    flex-grow: 1;
+    color: #514c4c;
+    
+}
+.offering .tagline {
+    font-size: 20px;
+    line-height: 2rem;
+    color: #7a7979;
+    margin: 1rem;
+    text-align: center;
+}
+.offering .action-button {
+    padding: .75rem 2rem;
+    outline: none;
+    border: none;
+    font-family: 'Poppins';
+    font-size: 1rem;
+    font-weight: 500;
+    color: #E6E9EA;
+    background-color: black;
+    border-radius: .95rem;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+}
+.offering .action-button:hover {
+    color: #000000;
+    font-weight: 700;
+    background-color: rgb(255, 252, 252);
+    border: 1px solid #000000;
+}
+.card-features {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 50px;
+}
+
+.box {
+    position: relative;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 18px;
+    height: 300px;
+    padding: 20px;
+    width: 350px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box h3 {
+    font-size: 1rem;
+    color: #514c4c;
+}
+
+.box p {
+    color: #7a7979;
+    font-size: small;
+    font-family: Poppins, sans-serif;
+}
+
+.box img {
+    width: 100px;
+    height: 100px;
+    margin-left: 70px;
+    margin-top: 40px;
+}
+
+.box::after {
+    content: '';
+    position: absolute;
+    height: 5px;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.box-pink::after {
+    background-color: rgb(240, 47, 111);
+}
+
+.box-green::after {
+    background-color: rgb(64, 231, 78);
+}
+
+.box-blue::after {
+    background-color: rgb(46, 166, 235);
+}
+
+.box-orange::after {
+    background-color: rgb(228, 126, 42);
+}
+
+@media (max-width: 768px) {
+    .card-features {
+        flex-direction: column;
+        /* Align cards vertically on smaller screens */
+        align-items: center;
+    }
+
+    .box {
+        width: auto;
+        /* Let cards take their content's width */
+        opacity: 0;
+        animation: floatIn 0.8s ease-in-out forwards;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+        /* Add a subtle box shadow */
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        /* Add transitions */
+    }
+}
+/*Some box animations*/
+.box:hover {
+    transform: scale(1.05);
+    /* Increase size on hover */
+    transition: transform 0.3s ease-in-out;
+    /* Add smooth transition */
+    transform: scale(1.05);
+    /* Increase size on hover */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    /* Increase shadow on hover */
+}
+
+.box:hover::after {
+    height: 10px;
+    /* Increase shadow height on hover */
+    transition: height 0.3s ease-in-out;
+    /* Add smooth transition */
+}
+@keyframes floatIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+        /* Start off the screen */
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        /* Float in as you scroll */
+    }
+}
+
+
+/* Apply animation delay to each box for staggered effect */
+.box:nth-child(odd) {
+    animation-delay: 0.2s;
+}
+
+.box:nth-child(even) {
+    animation-delay: 0.4s;
+}
+
+.pricing .title {
+    font-weight: 900;
+    margin: 80px;
+    padding-top: 20px;
+    line-height: 80px;
+    word-spacing: 0.5px;
+    text-align: center;
+    font-size: 4rem;
+    line-height: 4rem;
+    flex-grow: 1;
+    color: #514c4c;
+}
+.pricing .tagline {
+    font-size: 20px;
+    line-height: 2rem;
+    color: #7a7979;
+    margin: 2rem;
+    text-align: center;
+}
+.container{
+    max-width: 1170px;
+    margin: auto;
+    line-height: 1.5;
+    font-family: poppins, sans-serif;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+ul{
+    list-style: none;
+}
+.footer {
+    background-color: #514c4c;
+    padding: 70px 0;
+}
+.footer-col{
+    width: 25%;
+    padding: 0 15px;
+}
+.footer-col h4 {
+    font-size: 18px;
+    color: #f5f7f8;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+    font-weight: 500;
+    position: relative;
+}
+.footer-col h4::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #e91e63;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+.footer-col ul li:not(:last-child){
+    margin-bottom: 10px;
+}
+.footer-col ul li a{
+    font-size: 14px;
+    text-transform: capitalize;
+    color: #979191;
+    text-decoration: none;
+    font-weight: 300;
+    display: block;
+    transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+    color: #fff;
+    padding-left: 8px;
+
+}
+@media(max-width: 767px){
+    .footer-col{
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+@media(max-width: 574px) {
+    .footer-col {
+        width: 100%;
+    }
+}
+.price-container {
+    margin: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.card{
+    width: 18rem;
+    background-color: #fff;
+    padding: .5rem .5rem 2rem .5rem;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px 1px #799ee4;
+    text-align: center;
+    color: #514c4c;
+    
+}
+.card:nth-child(2){
+    box-shadow:0 3px 8px 1px #d3698d;
+}
+.card:nth-child(2) .price{
+    background: linear-gradient(90deg, #8944d8 20%, #e91eac 75%);
+    color: #fff;
+}
+.card:nth-child(3){
+    box-shadow:0 3px 8px 1px #e99f30;
+}
+.card:nth-child(3) .price {
+    background: linear-gradient(90deg, #f3749e 20%, #e9a91e 75%);
+    color: #fff;
+}
+.card .price{
+    background-color: #f5f7f8;
+    padding: 1rem 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+
+}
+.card .price-info{
+    width: 25ch;
+    margin: auto;
+    font-weight: 500;
+}
+.card .price-info .price-cost {
+    margin-bottom: 1rem;
+    font-weight: bold;
+    position: relative;
+
+}
+.card .price-info .price-cost .sign {
+    position: absolute;
+    top: 0;
+    left: 20%
+}
+.card .price-info .price-cost span{
+    position: absolute;
+    top: 0;
+    left: 40%
+}
+.card:nth-child(2) .price-info .price-cost span{
+    left: 34%;
+}
+.card:nth-child(3) .price-info .price-cost span {
+    left: 32%;
+}
+.card .price-info .price-cost .number{
+    font-size: 2.5rem;
+}
+.card .price-info .price-cost .number span{
+    font-size: initial;
+    position: initial;
+}
+.card .price-info .description{
+   font-size: 11px;
+   color: #979191;
+   padding: 10px;
+   padding-bottom: 20px;
+}
+.card button{
+    cursor: pointer;
+    background-color: #fff;
+    width: 90%;
+    padding: 1rem;
+    margin-top: 2rem;
+    border: 2px solid #979599;
+    border-radius: 4px;
+    transition: all 200ms ease;
+    font-family: poppins,sans-serif;
+    color: #514c4c;
+    font-size: 14px;
+}
+.card button:hover{
+    background-color: #514c4c;
+    color: #fff;
+}
+.card .benefits{
+    text-align: left;
+    list-style: none;
+
+}
+.card .benefits li{
+    margin: 0 0 1rem 1rem;
+    font-size: 13px;
+    color: #7a7979;
+}
+
+
+/* Media queries for smaller screens */
+@media (max-width: 768px) {
+    .hero-text {
+        font-size: 1.5rem;
+        /* Adjust the font size as needed */
+    }
+
+    .hero .title {
+        font-size: 35px;
+        /* Adjust the font size as needed */
+        line-height: 35px;
+        /* Adjust line height for better spacing */
+        margin: 50px;
+        /* Adjust the margin as needed */
+    }
+
+    .hero .tagline {
+        font-size: 14px;
+        /* Adjust the font size as needed */
+        margin: 1rem 0;
+        /* Adjust the margin as needed */
+        line-height: 17px;
+
+    }
+    .interface h2 {
+        font-size: 30px;
+        line-height: 35px;
+        padding: 1px;
+        display: none;
+    }
+    .offering .title {
+        font-size: 30px;
+        line-height: 30px;
+      
+    }
+    .offering .tagline {
+        font-size: 14px;
+        line-height: 15px;
+        padding-bottom: 30px;
+    }
+        .pricing .title {
+            font-size: 30px;
+            line-height: 30px;
+    
+        }
+    
+        .pricing .tagline {
+            font-size: 14px;
+            line-height: 15px;
+            padding-bottom: 30px;
+        }
+
+    /* Rest of your existing media query code */
+}

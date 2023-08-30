@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Signup-Style.css">
+    <meta name="SignUp" content="An online study workspace for students" />
+    <title>Odinari</title>
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form action="">
+                <h1>Create Account</h1>
+                <div class="social-container">
+                    <a href="#" class="social" id="google-signin"><img src="icons8-google-48(1).png"></a>
+                    <a href="#" class="social"><img src="icons8-linkedin-48(1).png"></img></a>
+                </div>
+                <span>or use your email for registration</span>
+                <div class="infield">
+                    <input type="text" name="first-name" placeholder="First name">
+                    <label></label>
+                </div>
+                <div class="infield">
+                    <input type="text" name="last-name" placeholder="Last name">
+                    <label></label>
+                </div>
+                <div class="infield">
+                    <input type="text" name="email" placeholder="Email">
+                    <label></label>
+                </div>
+                <div class="infield">
+                    <input type="text" name="password" placeholder="Password">
+                    <label></label>
+                </div>
+                <a href="#"id="alredy"">Already have an account?</a>
+                <button onclick="signInWithGoogle()">SIGN UP</button>
+            </form> 
+        </div>
+        <div class="form-container sign-in-container">
+            <form action="">
+                <h1>Sign in</h1>
+                <div class="social-container">
+                    <a href="#" class="social" id="google-signin"><img src="icons8-google-48(1).png"></a>
+                    <a href="#" class="social"><img src="icons8-linkedin-48(1).png"></img></a>
+                </div>
+                <span>or use your account</span>
+            <div class="infield">
+                <input type="text" name="email" placeholder="Email">
+                <label></label>
+            </div>
+            <div class="infield">
+                <input type="text" name="password" placeholder="Password">
+                <label></label>
+            </div>
+                <a href="#" id="forgot">Forgot your Password?</a>
+                <button onclick="signInWithGoogle()">SIGN IN</button>
+            </form>
+        </div>
+        <div class="overlay-container" id="overlayCon">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>To keep connected with us, please login with your details.</p>
+                    <button>SIGN IN</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Buddy!</h1>
+                    <p>Enter your details and start your journey with us.</p>
+                    <button>SIGN UP</button>
+                </div>
+            </div>
+            <button id="overlayBtn"></button>
+        </div>
+    </div>
+<div class="recommend-message">
+    <img src="icons8-multiple-devices-100.png">
+    <p>For the best experience, we recommend using a larger screen size.</p>
+</div>
+
+<script>
+    const container = document.getElementById('container');
+    const overlayCon = document.getElementById('overlayCon');
+    const overlayBtn = document.getElementById('overlayBtn');
+
+
+    overlayBtn.addEventListener('click', ()=> {
+        container.classList.toggle('right-panel-active');
+
+        overlayBtn.classList.remove('btnScaled');
+        window.requestAnimationFrame( ()=> {
+            overlayBtn.classList.add('btnScaled');
+        })
+    });
+
+    // google auth linking
+    const auth = firebase.auth();
+
+        // Function to initiate Google sign-in
+        function signInWithGoogle() {
+            const provider = new firebase.auth.GoogleAuthProvider();
+            auth.signInWithPopup(provider)
+                .then((result) => {
+                    // You can access user information from the result object
+                    const user = result.user;
+                    console.log(user);
+                })
+                .catch((error) => {
+                    console.error(error);
+                });
+        }
+        //sign out function
+        function signOut() {
+                auth.signOut()
+                    .then(() => {
+                        console.log("Signed out successfully.");
+                    })
+                    .catch((error) => {
+                        console.error(error);
+                    });
+        }
+        // Firebase initialization code (as mentioned earlier)
+        // ...
+
+        // Google Sign-In
+        const googleSignInButton = document.getElementById('google-signin');
+
+            googleSignInButton.addEventListener('click', () => {
+                signInWithGoogle();
+            });
+
+
+
+</script>
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+        apiKey: "AIzaSyADoWxp-zjxhK51ns9WsOurAZX-MSzCVcg",
+        authDomain: "odinari-cf084.firebaseapp.com",
+        projectId: "odinari-cf084",
+        storageBucket: "odinari-cf084.appspot.com",
+        messagingSenderId: "457995326928",
+        appId: "1:457995326928:web:26549261453a5434a255d5",
+        measurementId: "G-T77GQXQFBY"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+</script>
+
+</body>
+</html>
