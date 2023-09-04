@@ -54,33 +54,20 @@ header .start:hover {
 
 /* Media queries for smaller screens */
 @media (max-width: 768px) {
-    header {
-        font-size: 1rem;
+    header h1 {
+        font-size: 15px;
         /* Decrease header font size for smaller screens */
     }
 
-    .start {
-        font-size: 0.8rem;
+    header .start {
+        font-size: 10px;
         /* Decrease button font size for smaller screens */
         padding: 0.5rem 1rem;
         /* Adjust button padding for smaller screens */
     }
+
+
 }
-
-@media (max-width: 576px) {
-    header {
-        font-size: 0.8rem;
-        /* Further decrease header font size for even smaller screens */
-    }
-
-    .start {
-        font-size: 0.7rem;
-        /* Further decrease button font size for even smaller screens */
-        padding: 0.3rem 0.8rem;
-        /* Further adjust button padding for even smaller screens */
-    }
-}
-
 
 .hero-text {
     text-align: center;
@@ -164,17 +151,7 @@ header .start:hover {
     text-align: center;
 
 }
-@media (max-width: 768px) {
-    /* Adjustments for smaller screens can be added here if needed */
-    .hero .tagline {
-        font-size: 5px;
-        padding: 10px;
-    }
-    .hero .title {
-        font-size: 0.2vw;
-    }
 
-}
 
 .hero .card-image {
     display: flex;
@@ -343,6 +320,7 @@ header .start:hover {
         flex-direction: column;
         /* Align cards vertically on smaller screens */
         align-items: center;
+        margin: 20px;
     }
 
     .box {
@@ -354,6 +332,14 @@ header .start:hover {
         /* Add a subtle box shadow */
         transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         /* Add transitions */
+    }
+    .box p{
+        font-size: 10px;
+        align-items: center;
+    }
+    .box h3{
+        align-items: center;
+        font-size: 14px;
     }
 }
 /*Some box animations*/
@@ -460,7 +446,7 @@ ul{
     margin-bottom: 10px;
 }
 .footer-col ul li a{
-    font-size: 14px;
+    font-size: 12px;
     text-transform: capitalize;
     color: #979191;
     text-decoration: none;
@@ -476,14 +462,17 @@ ul{
 @media(max-width: 767px){
     .footer-col{
         width: 50%;
-        margin-bottom: 30px;
+        margin-bottom: 10px;
+       
+    }
+    .footer-col h4{
+        font-size: 13px;
+    }
+    .footer-col ul li{
+        font-size: 5px;
     }
 }
-@media(max-width: 574px) {
-    .footer-col {
-        width: 100%;
-    }
-}
+
 .price-container {
     margin: 2rem;
     display: flex;
@@ -593,55 +582,146 @@ ul{
 
 /* Media queries for smaller screens */
 @media (max-width: 768px) {
-    .hero-text {
-        font-size: 1.5rem;
-        /* Adjust the font size as needed */
-    }
-
     .hero .title {
-        font-size: 35px;
+        font-size: 20px;
         /* Adjust the font size as needed */
-        line-height: 35px;
+        line-height: 20px;
         /* Adjust line height for better spacing */
-        margin: 50px;
+        margin: 20px;
         /* Adjust the margin as needed */
+        margin-top: 50px;
+    }
+    .hero .title li{
+        margin-top: -30px;
+    }
+    .hero .title li span::after {
+        content: "";
+        position: absolute;
+        height: 0%;
+        width: 100%;
+        left: 0;
+        background: #E6E9EA;
+        border-left: 2px solid #514c4c;
+        animation: typing 3s steps(13) infinite;
     }
 
     .hero .tagline {
-        font-size: 14px;
+        font-size: 12px;
         /* Adjust the font size as needed */
-        margin: 1rem 0;
+        margin: 10px 0;
         /* Adjust the margin as needed */
-        line-height: 17px;
+        line-height: 15px;
+        padding: 20px;
+        align-items: center;
 
+    }
+    .hero .action-button{
+        font-size: 12px;
+        /* Decrease button font size for smaller screens */
+        padding: 0.5rem 1rem;
+        /* Adjust button padding for smaller screens */
     }
     .interface h2 {
-        font-size: 30px;
-        line-height: 35px;
-        padding: 1px;
-        display: none;
+        font-size: 12px;
+        line-height: 17px;
+        margin: 1px;
+       
     }
     .offering .title {
-        font-size: 30px;
-        line-height: 30px;
-      
+        font-size: 12px;
+        line-height: 15px;
+        margin: 10px;
     }
     .offering .tagline {
-        font-size: 14px;
+        font-size: 10px;
+        line-height: 13px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+    }
+    .offering .action-button{
+        font-size: 12px;
+            /* Decrease button font size for smaller screens */
+            padding: 0.5rem 1rem;
+            /* Adjust button padding for smaller screens */
+    }
+    .pricing .title {
+        font-size: 12px;
+        margin: 10px;
+    }
+    
+    .pricing .tagline {
+        font-size: 10px;
         line-height: 15px;
         padding-bottom: 30px;
+        margin-top: 1px;
     }
-        .pricing .title {
-            font-size: 30px;
-            line-height: 30px;
-    
-        }
-    
-        .pricing .tagline {
-            font-size: 14px;
-            line-height: 15px;
-            padding-bottom: 30px;
-        }
 
     /* Rest of your existing media query code */
+}
+.slider-area h2{
+    text-align: center;
+    font-family: poppins;
+    font-weight: 900;
+    margin: 80px;
+    padding-top: 20px;
+    word-spacing: 0.5px;
+    text-align: center;
+    font-size: 2rem;
+    line-height: 4rem;
+    flex-grow: 1;
+    color: #969393;
+
+}
+.wrapper{
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    overflow: hidden;
+    padding: 0px;
+}
+.item{
+    animation: animate 25s alternate linear infinite;
+    
+}
+.wrapper:hover .item{
+    animation-play-state: paused;
+}
+@keyframes animate{
+    0%{
+        transform: translate3d(0, 0, 0);
+    }
+    100%{
+        transform: translate3d(-100px, 0, 0);
+    }
+}
+@media (max-width: 767px){
+    .slider-area h2{
+        font-size: 10px;
+            /* Adjust the font size as needed */
+        line-height: 15px;
+            /* Adjust line height for better spacing */
+        margin: 30px;
+            /* Adjust the margin as needed */
+    }
+    .wrapper {
+        width:fit-content;
+        padding: 10px;
+        overflow: hidden;
+        margin: 0%;
+       
+    }
+    .item {
+        width:auto;
+        padding:0px;
+        overflow: hidden;
+    }
+        @keyframes animate {
+            0% {
+                transform: translate3d(0, 0, 0);
+            }
+    
+            100% {
+                transform: translate3d(-40px, 0, 0);
+            }
+        }
 }
